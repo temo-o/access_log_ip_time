@@ -21,7 +21,6 @@
 			
 			while (($line = fgets($handle)) !== false) {
 				
-				#$str = '40.77.188.49 - - [19/Jan/2021:03:28:17 +0400] "GET /pixel_php/pixel_v07.php?h=https%3A%2F%2Fwww.myvideo.ge%2Fv%2F3962905&aon_p=TU9WeGFrRGYrNzEwb21VK0diMkVPdz09&r=&fp=546fc61facdb7a141ff6cc75894e0811 HTTP/2.0" 200 1498 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/534+ (KHTML, like Gecko) BingPreview/1.0b"';
 				$pattern = "/2021:[0-9][0-9]:[0-9][0-9]:[0-9][0-9]/i";
 				preg_match($pattern, $line, $matches, PREG_OFFSET_CAPTURE);	
 				
@@ -71,10 +70,7 @@
 			while (($line = fgets($handle)) !== false) {
 				
 				preg_match('/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/', $line, $matches);
-				
 				#print_r($matches);
-				#exit;
-				
 				if($matches[0]>0){
 					
 					#print_r($matches);
@@ -115,7 +111,7 @@
 		} 
 	}
 	
-	get_access_time_count("access.pixel.analyticson.ai_2021-01-21_last_hours","access_log_pixel_2021-01-21_last_hours_time_output.txt");
-	get_access_ip_count("access.pixel.analyticson.ai_2021-01-21_last_hours","access_log_pixel_2021-01-21_last_hours_ip_output.txt");
+	get_access_time_count("input_file","output_time.txt");
+	get_access_ip_count("input_file","output_ip.txt");
 
 ?>
